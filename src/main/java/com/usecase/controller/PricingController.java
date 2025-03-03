@@ -27,8 +27,10 @@ public class PricingController {
 
 	@GetMapping("/prices/{storeID}/{articleID}")
 	@Operation(summary = "Fetch prices by store Id", description = "Fetch the prices of the product by store Id")
-	public Map<String, Object> getPrices(@PathVariable String storeID, @PathVariable String articleID,
-			@RequestParam int page, @RequestParam int pageSize) {
+	public Map<String, Object> getPrices(@PathVariable("storeID") String storeID,
+	                                     @PathVariable("articleID") String articleID,
+	                                     @RequestParam(name = "page") int page,
+	                                     @RequestParam(name = "pageSize") int pageSize) {
 		
 		LOGGER.info("Fetching prices for Store : " + storeID + " articleID " + articleID);
 		Map<String, Object> prices = priceService.getPrices(storeID, articleID, page, pageSize);
