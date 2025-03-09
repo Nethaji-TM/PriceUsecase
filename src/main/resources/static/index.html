@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing API</title>
+<link rel="stylesheet" href="css/pricing.css">
+</head>
+<body>
+	<div class="container">
+		<h2>Pricing API Request</h2>
+
+		<!-- Form for inputs -->
+		<div class="form-container">
+			<div class="form-group">
+				<label for="storeId">Store ID:</label> 
+				<input type="text" id="storeId" value="7001">
+			</div>
+			<div class="form-group">
+				<label for="artifactId">Artifact ID:</label> 
+				<input type="text" id="artifactId" value="1000102674">
+			</div>
+			<div class="button-container">
+				<button onclick="fetchPricing()">Get Price</button>
+			</div>
+		</div>
+		<div id="responseContainer" style="display: none;">
+			<h2>Response</h2>
+			<table>
+				<thead>
+					<tr>
+                    <th>Store ID</th>
+                    <th>Article ID</th>
+                    <th>Type</th>
+                    <th>Subtype</th>
+                    <th>Amount</th>
+                    <th>Valid From</th>
+                    <th>Valid To</th>
+                    <th>Overlapped</th>
+					</tr>
+				</thead>
+				<tbody id="responseTableBody"></tbody>
+			</table>
+		</div>
+	</div>
+
+	<script src="js/pricing.js"></script>
+</body>
+</html>
