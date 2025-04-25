@@ -8,10 +8,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.usecase.dto.PriceRequest;
 import com.usecase.handler.PriceNotFoundException;
 import com.usecase.model.Price;
 import com.usecase.service.PriceService;
@@ -47,5 +50,14 @@ public class PricingController {
 		LOGGER.info("Fetching all prices");
         return priceService.findAll();
     }
+	
+	@PostMapping("/addPrice")
+	@Operation(summary = "Add prices", description = "Add new price to Cache")
+	public Price addPrice(@RequestBody PriceRequest priceRequest) {
+		LOGGER.info("Adding price :::: " + priceRequest);
+		
+		Price addedPrice = priceService.addPrice(priceRequest);
+		return addedPrice;
+	}
 
 }
