@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    font-size: 14px; /* smaller font */
+}
+
+table {
+    margin: 1 auto;
+    border-spacing: 8px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="file"] {
+    width: 220px;
+    padding: 4px;
+    font-size: 12px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    font-weight: bold;
+}
